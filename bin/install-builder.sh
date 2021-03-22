@@ -7,6 +7,7 @@ echo "APT::Install-Recommends \"false\";" | tee -a /etc/apt/apt.conf.d/buildpack
 echo "APT::Get::Upgrade \"false\";" | tee -a /etc/apt/apt.conf.d/buildpack.conf
 echo "APT::Get::Install-Suggests \"false\";" | tee -a /etc/apt/apt.conf.d/buildpack.conf
 
+export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
 apt-get install -y \
