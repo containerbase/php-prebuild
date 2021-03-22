@@ -15,6 +15,7 @@ FROM ubuntu:focal@sha256:b4f9e18267eb98998f6130342baacaeb9553f136142d40959a1b46d
 #--------------------------------------
 FROM build-${FLAVOR} as builder
 
+ARG APT_PROXY
 
 ENTRYPOINT [ "dumb-init", "--", "builder.sh" ]
 
