@@ -11,7 +11,7 @@ Prebuild PHP releases used by [containerbase/buildpack](https://github.com/conta
 Build the image
 
 ```bash
-docker build -t builder --build-arg APT_PROXY=http://apt-proxy:3142 --build-arg DISTRO=focal --build-arg ARCH=x86_64 .
+docker build -t builder --build-arg APT_PROXY=http://apt-proxy:3142 --build-arg DISTRO=focal .
 ```
 
 Test the image
@@ -24,9 +24,8 @@ docker run --rm -it -e DEBURG=true builder 8.0.3
 
 Optional environment variables
 
-| Name        | Description                                                                   | Default   |
-| ----------- | ----------------------------------------------------------------------------- | --------- |
-| `DISTRO`    | Set an ubuntu base distro, `focal` and `bionic` are supported                 | `focal`   |
-| `ARCH`      | Set a kernel artitecture supported by ubuntu base, only `x86_64` is supported | `x86_64`  |
-| `APT_PROXY` | Set an APT http proxy for installing build deps                               | `<empty>` |
-| `DEBUG`     | Show verbose php build output                                                 | `<empty>` |
+| Name        | Description                                                   | Default   |
+| ----------- | ------------------------------------------------------------- | --------- |
+| `DISTRO`    | Set an ubuntu base distro, `focal` and `bionic` are supported | `focal`   |
+| `APT_PROXY` | Set an APT http proxy for installing build deps               | `<empty>` |
+| `DEBUG`     | Show verbose php build output                                 | `<empty>` |
