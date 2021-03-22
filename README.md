@@ -1,4 +1,4 @@
-![build](https://github.com/containerbase/php/workflows/build/badge.svg)
+![build](https://github.com/containerbase/php/actions/workflows/build.yml/badge.svg)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/containerbase/php)
 ![GitHub](https://img.shields.io/github/license/containerbase/php)
 
