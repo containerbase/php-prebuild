@@ -1,5 +1,6 @@
 #-------------------------
 # renovate rebuild trigger
+# https://www.php.net/supported-versions.php
 #-------------------------
 
 # makes lint happy
