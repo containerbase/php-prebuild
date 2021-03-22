@@ -19,6 +19,7 @@ apt-get install -q -y \
   autoconf2.13 \
   autoconf2.64 \
   autoconf \
+  bison \
   build-essential \
   ca-certificates \
   curl \
@@ -27,7 +28,7 @@ apt-get install -q -y \
   file \
   libbz2-dev \
   libc-client2007e-dev \
-  libcurl4-gnutls-dev \
+  libcurl4-openssl-dev \
   libicu-dev \
   libjpeg-dev \
   libkrb5-dev \
@@ -54,3 +55,7 @@ git clone https://github.com/php-build/php-build.git;
 PREFIX=/usr/local ./php-build/install.sh
 
 mkdir -p /usr/local/php /cache
+
+# fixes
+#https://github.com/phpbrew/phpbrew/issues/861#issuecomment-294715448
+ln -s /usr/include/x86_64-linux-gnu/curl /usr/include/curl

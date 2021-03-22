@@ -6,7 +6,7 @@ VERSION=${1}
 
 CODENAME=$(. /etc/os-release && echo ${VERSION_CODENAME})
 
-NAME=python
+NAME=php
 BUILD_ARGS=
 
 if [[ "${DEBUG}" == "true" ]]; then
