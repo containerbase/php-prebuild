@@ -11,7 +11,7 @@ Prebuild PHP releases used by [containerbase/buildpack](https://github.com/conta
 Build the image
 
 ```bash
-docker build -t builder --build-arg APT_PROXY=http://apt-proxy:3142 .
+docker build -t builder --build-arg APT_PROXY=http://apt-proxy:3142 --build-arg DISTRO=focal .
 ```
 
 Test the image
@@ -20,7 +20,12 @@ Test the image
 docker run --rm -it -e DEBURG=true builder 8.0.3
 ```
 
+`${PWD}/.cache` will contain packed releases after successful build.
+
 Optional environment variables
 
-- `APT_PROXY`: Set an APT http proxy for installing build deps
-- `DEBUG`: Show verbose php build output
+| Name        | Description                                                   | Default   |
+| ----------- | ------------------------------------------------------------- | --------- |
+| `DISTRO`    | Set an ubuntu base distro, `focal` and `bionic` are supported | `focal`   |
+| `APT_PROXY` | Set an APT http proxy for installing build deps               | `<empty>` |
+| `DEBUG`     | Show verbose php build output                                 | `<empty>` |

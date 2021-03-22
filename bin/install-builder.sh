@@ -11,6 +11,7 @@ if [[ ! -z "${APT_PROXY+x}" ]]; then
   echo "Acquire::http::proxy \"${APT_PROXY}\";" | tee -a /etc/apt/apt.conf.d/99buildpack-proxy.conf
 fi
 
+
 export DEBIAN_FRONTEND=noninteractive
 
 # https://github.com/php-build/php-build/blob/6530e7501ccc758928d5510813dc3f5fbdc87419/install-dependencies.sh#L34
@@ -47,15 +48,22 @@ apt-get install -q -y \
   zlib1g-dev \
   ;
 
-if [[ ! -z "${APT_PROXY+x}" ]]; then
-  rm -f /etc/apt/apt.conf.d/99buildpack-proxy.conf
-fi
-
 git clone https://github.com/php-build/php-build.git;
 PREFIX=/usr/local ./php-build/install.sh
 
 mkdir -p /usr/local/php /cache
 
+#--------------------------------
 # fixes
+#--------------------------------
+
+ARCH=$(uname -p)
 #https://github.com/phpbrew/phpbrew/issues/861#issuecomment-294715448
-ln -s /usr/include/x86_64-linux-gnu/curl /usr/include/curl
+ln -s /usr/include/${ARCH}-linux-gnu/curl /usr/include/curl
+
+#--------------------------------
+# cleanup
+#--------------------------------
+if [[ ! -z "${APT_PROXY+x}" ]]; then
+  rm -f /etc/apt/apt.conf.d/99buildpack-proxy.conf
+fi
