@@ -7,7 +7,7 @@ VERSION=${1}
 CODENAME=$(. /etc/os-release && echo ${VERSION_CODENAME})
 
 NAME=php
-ARCH= $(uname -p)
+ARCH=$(uname -p)
 BUILD_ARGS=
 
 if [[ "${DEBUG}" == "true" ]]; then
