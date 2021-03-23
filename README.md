@@ -17,7 +17,7 @@ docker build -t builder --build-arg APT_PROXY=http://apt-proxy:3142 --build-arg 
 Test the image
 
 ```bash
-docker run --rm -it -e DEBURG=true builder 8.0.3
+docker run --rm -it -v ${PWD}/.cache:/cache -e DEBURG=true builder 8.0.3
 ```
 
 `${PWD}/.cache` will contain packed releases after successful build.
