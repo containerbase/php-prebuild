@@ -1,6 +1,6 @@
-![build](https://github.com/containerbase/php/actions/workflows/build.yml/badge.svg)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/containerbase/php)
-![GitHub](https://img.shields.io/github/license/containerbase/php)
+![build](https://github.com/containerbase/php-prebuild/actions/workflows/build.yml/badge.svg)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/containerbase/php-prebuild)
+![GitHub](https://img.shields.io/github/license/containerbase/php-prebuild)
 
 # containerbase PHP releases
 

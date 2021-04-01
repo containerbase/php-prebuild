@@ -1,5 +1,5 @@
 {
-  "name": "containerbase-php",
+  "name": "containerbase-php-prebuild",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
