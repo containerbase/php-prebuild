@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
-  "repository": "https://github.com/containerbase/php.git",
+  "repository": "https://github.com/containerbase/php-prebuild.git",
   "author": "Michael Kriese <michael.kriese@visualon.de>",
   "scripts": {
     "lint": "run-s prettier",
