@@ -11,7 +11,7 @@ FROM scratch
 ENV PHP_VERSION=7.3.28
 
 # renovate: datasource=docker depName=php versioning=docker
-ENV PHP_VERSION=7.4.18
+ENV PHP_VERSION=7.4.19
 
 # renovate: datasource=docker depName=php versioning=docker
 ENV PHP_VERSION=8.0.5
