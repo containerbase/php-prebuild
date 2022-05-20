@@ -59,7 +59,7 @@ mkdir -p /usr/local/php /cache
 
 ARCH=$(uname -p)
 #https://github.com/phpbrew/phpbrew/issues/861#issuecomment-294715448
-ln -s /usr/include/${ARCH}-linux-gnu/curl /usr/include/curl
+ln -s "/usr/include/${ARCH}-linux-gnu/curl" /usr/include/curl
 
 #--------------------------------
 # cleanup
