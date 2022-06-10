@@ -14,4 +14,4 @@ ENV PHP_VERSION=7.3.33
 ENV PHP_VERSION=7.4.30
 
 # renovate: datasource=docker depName=php versioning=docker
-ENV PHP_VERSION=8.0.19
+ENV PHP_VERSION=8.0.20
