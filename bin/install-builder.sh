@@ -7,7 +7,7 @@ echo "APT::Install-Recommends \"false\";" | tee -a /etc/apt/apt.conf.d/99buildpa
 echo "APT::Get::Upgrade \"false\";" | tee -a /etc/apt/apt.conf.d/99buildpack.conf
 echo "APT::Get::Install-Suggests \"false\";" | tee -a /etc/apt/apt.conf.d/99buildpack.conf
 
-if [[ ! -z "${APT_PROXY+x}" ]]; then
+if [[ -n "${APT_PROXY}" ]]; then
   echo "Acquire::http::proxy \"${APT_PROXY}\";" | tee -a /etc/apt/apt.conf.d/99buildpack-proxy.conf
 fi
 
@@ -64,6 +64,6 @@ ln -s "/usr/include/${ARCH}-linux-gnu/curl" /usr/include/curl
 #--------------------------------
 # cleanup
 #--------------------------------
-if [[ ! -z "${APT_PROXY+x}" ]]; then
+if [[ -n "${APT_PROXY}" ]]; then
   rm -f /etc/apt/apt.conf.d/99buildpack-proxy.conf
 fi

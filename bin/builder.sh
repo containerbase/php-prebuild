@@ -4,6 +4,7 @@ set -e
 
 VERSION=${1}
 
+# shellcheck disable=SC1091
 CODENAME=$(. /etc/os-release && echo "${VERSION_CODENAME}")
 
 NAME=php
