@@ -7,11 +7,14 @@
 FROM scratch
 
 
-# renovate: datasource=docker depName=php versioning=docker
-ENV PHP_VERSION=7.3.33
-
+# EOL: 2022-11-28
 # renovate: datasource=docker depName=php versioning=docker
 ENV PHP_VERSION=7.4.30
 
+# EOL: 2023-11-26
 # renovate: datasource=docker depName=php versioning=docker
 ENV PHP_VERSION=8.0.20
+
+# EOL: 2024-11-25
+# renovate: datasource=docker depName=php versioning=docker
+ENV PHP_VERSION=8.1.7
