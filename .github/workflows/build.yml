@@ -15,11 +15,18 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
 
     strategy:
+      # some versions are not builable on jammy
+      fail-fast: false
       matrix:
-        distro: [jammy, focal, bionic]
+        distro: [focal, bionic]
         arch: [x86_64]
+        experimental: [false]
+        include:
+          - distro: jammy
+            experimental: true
 
     env:
       DISTRO: ${{ matrix.distro }} # build target, name required by binary-builder
