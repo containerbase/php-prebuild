@@ -17,4 +17,4 @@ ENV PHP_VERSION=8.0.23
 
 # EOL: 2024-11-25
 # renovate: datasource=docker depName=php versioning=docker
-ENV PHP_VERSION=8.1.9
+ENV PHP_VERSION=8.1.10
