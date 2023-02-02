@@ -1,8 +1,8 @@
-![build](https://github.com/containerbase/php-prebuild/actions/workflows/build.yml/badge.svg)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/containerbase/php-prebuild)
-![GitHub](https://img.shields.io/github/license/containerbase/php-prebuild)
-
 # containerbase PHP releases
+
+[![build](https://github.com/containerbase/php-prebuild/actions/workflows/build.yml/badge.svg)](https://github.com/containerbase/php-prebuild/actions/workflows/build.yml)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/containerbase/php-prebuild)
+![License: MIT](https://img.shields.io/github/license/containerbase/php-prebuild)
 
 Prebuild PHP releases used by [containerbase/buildpack](https://github.com/containerbase/buildpack).
 
@@ -24,8 +24,8 @@ docker run --rm -it -v ${PWD}/.cache:/cache -e DEBURG=true builder 8.0.3
 
 Optional environment variables
 
-| Name        | Description                                                            | Default   |
-| ----------- | ---------------------------------------------------------------------- | --------- |
-| `DISTRO`    | Set an ubuntu base distro, `jammy`, `focal` and `bionic` are supported | `focal`   |
-| `APT_PROXY` | Set an APT http proxy for installing build deps                        | `<empty>` |
-| `DEBUG`     | Show verbose php build output                                          | `<empty>` |
+| Name        | Description                                                  | Default   |
+| ----------- | ------------------------------------------------------------ | --------- |
+| `DISTRO`    | Set an ubuntu base distro, `focal` and `jammy` are supported | `focal`   |
+| `APT_PROXY` | Set an APT http proxy for installing build deps              | `<empty>` |
+| `DEBUG`     | Show verbose php build output                                | `<empty>` |
