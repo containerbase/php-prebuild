@@ -4,7 +4,7 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/containerbase/php-prebuild)
 ![License: MIT](https://img.shields.io/github/license/containerbase/php-prebuild)
 
-Prebuild PHP releases used by [containerbase/buildpack](https://github.com/containerbase/buildpack).
+Prebuild PHP releases used by [containerbase/base](https://github.com/containerbase/base).
 
 ## Local development
 
