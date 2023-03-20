@@ -5,5 +5,5 @@
   "versioning": "docker",
   "startVersion": "7.4.0",
   "ignoredVersions": [],
-  "allowedVersions": "~7.4.31 || ~8.0.21 || >= 8.1.0"
+  "allowedVersions": "~7.4.34 || ~8.0.29 || >= 8.1.0"
 }
