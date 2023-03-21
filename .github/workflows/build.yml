@@ -7,7 +7,7 @@ on:
       - 'renovate/**'
 
   pull_request:
-  
+
   schedule:
     - cron: '0 1 * * *'
 
@@ -18,10 +18,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.distro == 'jammy' }}
 
     strategy:
-      # some versions are not builable on jammy
       fail-fast: false
       matrix:
         distro:
@@ -43,6 +41,7 @@ jobs:
         with:
           command: binary-builder
           dry-run: ${{github.ref != 'refs/heads/main'}}
+          config: builder/${{ matrix.distro }}.json
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
