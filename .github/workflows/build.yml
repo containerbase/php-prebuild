@@ -3,13 +3,9 @@ name: build
 on:
   push:
     branches:
-      - main
-      - 'renovate/**'
+      - release
 
   pull_request:
-  
-  schedule:
-    - cron: '0 1 * * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
@@ -42,7 +38,6 @@ jobs:
         uses: containerbase/internal-tools@47809eda33adec5b2926c5c7e7de8f2602fd3ed3 # v1.15.8
         with:
           command: binary-builder
-          dry-run: ${{github.ref != 'refs/heads/main'}}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
