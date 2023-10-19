@@ -49,15 +49,20 @@ if [[ ! -f "/usr/local/share/php-build/definitions/${VERSION}" ]]; then
   cat "/usr/local/share/php-build/definitions/${VERSION}"
 fi
 
+# disable xdebug
+sed 's/install_xdebug/#install_xdebug/' -i "/usr/local/share/php-build/definitions/${VERSION}"
+
 # https://github.com/php-build/php-build/blob/6530e7501ccc758928d5510813dc3f5fbdc87419/man/php-build.1.ronn#environment
 # https://github.com/php-build/php-build/issues/564
-export PHP_BUILD_CONFIGURE_OPTS="--disable-intl --disable-cgi --disable-fpm" PHP_BUILD_XDEBUG_ENABLE=off
+export PHP_BUILD_CONFIGURE_OPTS="--disable-intl --disable-cgi --disable-fpm --disable-phpdbg --disable-shared --enable-static" PHP_BUILD_XDEBUG_ENABLE=off
 
 echo "Building ${NAME} ${VERSION} for ${CODENAME}"
 php-build ${BUILD_ARGS} "${VERSION}" "/usr/local/${NAME}/${VERSION}"
 
-/usr/local/${NAME}/"${VERSION}"/bin/php --info
+"/usr/local/${NAME}/${VERSION}/bin/php" --version
 
+file "/usr/local/${NAME}/${VERSION}/bin/php"
+#ldd "/usr/local/${NAME}/${VERSION}/bin/php"
 
 echo "Compressing ${NAME} ${VERSION} for ${CODENAME}-${ARCH}"
 tar -cJf "/cache/${NAME}-${VERSION}-${CODENAME}-${ARCH}.tar.xz" -C /usr/local/${NAME} "${VERSION}"
