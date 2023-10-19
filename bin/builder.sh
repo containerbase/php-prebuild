@@ -1,15 +1,39 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 VERSION=${1}
+
+
 
 # shellcheck disable=SC1091
 CODENAME=$(. /etc/os-release && echo "${VERSION_CODENAME}")
 
 NAME=php
 ARCH=$(uname -p)
+
+
+curl -sSfLo php.tar.xz "https://github.com/containerbase/php-prebuild/releases/download/${VERSION}/php-${VERSION}-${CODENAME}-${ARCH}.tar.xz"
+
+cp "${CODENAME}-${ARCH}.yml" AppImageBuilder.yml
+sed -i "s/VERSION/${VERSION}/g" AppImageBuilder.yml
+
+ls -la
+
+appimage-builder
+
+"./php-${VERSION}-${ARCH}.AppImage" --info
+
+cp ./*.AppImage /cache/
+
+
+if [[ "$SKIP" == "" ]]; then
+  exit 0
+fi
+
 BUILD_ARGS=
+
+
 
 if [[ "${DEBUG}" == "true" ]]; then
   BUILD_ARGS="-v"
@@ -54,10 +78,10 @@ fi
 export PHP_BUILD_CONFIGURE_OPTS="--disable-intl --disable-cgi --disable-fpm" PHP_BUILD_XDEBUG_ENABLE=off
 
 echo "Building ${NAME} ${VERSION} for ${CODENAME}"
-php-build ${BUILD_ARGS} "${VERSION}" "/usr/local/${NAME}/${VERSION}"
+php-build "${BUILD_ARGS}" "${VERSION}" "/usr/local/${NAME}/${VERSION}"
 
-/usr/local/${NAME}/"${VERSION}"/bin/php --info
+"/usr/local/${NAME}/${VERSION}/bin/php" --info
 
 
 echo "Compressing ${NAME} ${VERSION} for ${CODENAME}-${ARCH}"
-tar -cJf "/cache/${NAME}-${VERSION}-${CODENAME}-${ARCH}.tar.xz" -C /usr/local/${NAME} "${VERSION}"
+tar -cJf "/cache/${NAME}-${VERSION}-${CODENAME}-${ARCH}.tar.xz" -C /usr/local/"${NAME}" "${VERSION}"
