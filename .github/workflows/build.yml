@@ -42,7 +42,6 @@ jobs:
         with:
           command: binary-builder
           dry-run: ${{github.ref != 'refs/heads/main'}}
-          config: builder/${{ matrix.distro }}.json
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
