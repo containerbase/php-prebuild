@@ -12,7 +12,7 @@ ENV PHP_VERSION=8.1.27
 
 # EOL: 2025-12-08
 # renovate: datasource=docker depName=php versioning=docker
-ENV PHP_VERSION=8.2.16
+ENV PHP_VERSION=8.2.17
 
 # EOL: 2026-11-23
 # renovate: datasource=docker depName=php versioning=docker
