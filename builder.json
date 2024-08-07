@@ -3,7 +3,6 @@
   "depName": "php",
   "datasource": "docker",
   "versioning": "docker",
-  "startVersion": "8.1.0",
-  "ignoredVersions": [],
-  "allowedVersions": ">= 8.1.0"
+  "startVersion": "7.3.0",
+  "ignoredVersions": []
 }
