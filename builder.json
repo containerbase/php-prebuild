@@ -2,7 +2,8 @@
   "image": "php",
   "depName": "php",
   "datasource": "docker",
-  "versioning": "docker",
+  "versioning": "semver",
+  "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+)$",
   "startVersion": "7.4.0",
   "ignoredVersions": [],
   "reverse": true
