@@ -6,14 +6,18 @@
 # makes lint happy
 FROM scratch
 
-# EOL: 2024-11-25
+# EOL: 2025-12-31
 # renovate: datasource=docker depName=php versioning=docker
 ENV PHP_VERSION=8.1.30
 
-# EOL: 2025-12-08
+# EOL: 2026-12-31
 # renovate: datasource=docker depName=php versioning=docker
 ENV PHP_VERSION=8.2.25
 
-# EOL: 2026-11-23
+# EOL: 2027-12-31
 # renovate: datasource=docker depName=php versioning=docker
 ENV PHP_VERSION=8.3.13
+
+# EOL: 2028-12-31
+# renovate: datasource=docker depName=php versioning=docker
+ENV PHP_VERSION=8.4.1
