@@ -13,7 +13,7 @@ FROM ghcr.io/containerbase/ubuntu:22.04@sha256:0e5e4a57c2499249aafc3b40fcd541e9a
 #--------------------------------------
 # builder images
 #--------------------------------------
-FROM build-${DISTRO} as builder
+FROM build-${DISTRO} AS builder
 
 ARG APT_PROXY
 
