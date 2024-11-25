@@ -29,17 +29,20 @@ function check_semver () {
 }
 
 if [[ ! -f "/usr/local/share/php-build/definitions/${VERSION}" ]]; then
-  echo "Missing build definition for ${VERSION}. Trying to find older patch build definition"
+  echo "Missing build definition for ${VERSION}. Trying to find older build definition."
   check_semver "${VERSION}"
   if [[ ! "${MAJOR}" || ! "${MINOR}" || ! "${PATCH}" ]]; then
     echo Invalid version: "${TOOL_VERSION}" >&2
     exit 1
   fi
-  oldVersion=$(find /usr/local/share/php-build/definitions -type f -name "${MAJOR}.${MINOR}.*" -printf '%f\n' | sort --version-sort -r | head -n 1)
 
+  oldVersion=$(find /usr/local/share/php-build/definitions -type f -name "${MAJOR}.${MINOR}.*" -printf '%f\n' | sort --version-sort -r | head -n 1)
   if [[ -z $oldVersion ]]; then
-    echo "No usable definition found" >&2
-    exit 1
+    oldVersion=$(find /usr/local/share/php-build/definitions -type f -name "${MAJOR}.$((MINOR-1)).*" -printf '%f\n' | sort --version-sort -r | head -n 1)
+    if [[ -z $oldVersion ]]; then
+      echo "No usable definition found" >&2
+      exit 1
+    fi
   fi
 
   echo "Using $oldVersion"
