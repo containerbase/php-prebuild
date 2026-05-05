@@ -57,7 +57,7 @@ mkdir -p /usr/local/php /cache
 # fixes
 #--------------------------------
 
-ARCH=$(uname -p)
+ARCH=$(arch)
 #https://github.com/phpbrew/phpbrew/issues/861#issuecomment-294715448
 ln -s "/usr/include/${ARCH}-linux-gnu/curl" /usr/include/curl
 

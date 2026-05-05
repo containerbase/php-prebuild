@@ -11,7 +11,7 @@ Prebuild PHP releases used by [containerbase/base](https://github.com/containerb
 Build the image
 
 ```bash
-docker build -t builder --build-arg APT_PROXY=http://apt-proxy:3142 --build-arg DISTRO=focal .
+docker build -t builder --build-arg APT_PROXY=http://apt-proxy:3142 --build-arg DISTRO=resolute .
 ```
 
 Test the image
@@ -24,8 +24,8 @@ docker run --rm -it -v ${PWD}/.cache:/cache -e DEBURG=true builder 8.0.3
 
 Optional environment variables
 
-| Name        | Description                                                  | Default   |
-| ----------- | ------------------------------------------------------------ | --------- |
-| `DISTRO`    | Set an ubuntu base distro, `focal` and `jammy` are supported | `focal`   |
-| `APT_PROXY` | Set an APT http proxy for installing build deps              | `<empty>` |
-| `DEBUG`     | Show verbose php build output                                | `<empty>` |
+| Name        | Description                                                              | Default    |
+| ----------- | ------------------------------------------------------------------------ | ---------- |
+| `DISTRO`    | Set an ubuntu base distro, `focal`, `jammy` and `resolute` are supported | `resolute` |
+| `APT_PROXY` | Set an APT http proxy for installing build deps                          | `<empty>`  |
+| `DEBUG`     | Show verbose php build output                                            | `<empty>`  |
