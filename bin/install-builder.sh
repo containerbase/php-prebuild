@@ -17,8 +17,6 @@ export DEBIAN_FRONTEND=noninteractive
 # https://github.com/php-build/php-build/blob/6530e7501ccc758928d5510813dc3f5fbdc87419/install-dependencies.sh#L34
 apt-get update -q
 apt-get install -q -y \
-  autoconf2.13 \
-  autoconf2.64 \
   autoconf \
   bison \
   build-essential \
@@ -57,7 +55,7 @@ mkdir -p /usr/local/php /cache
 # fixes
 #--------------------------------
 
-ARCH=$(uname -p)
+ARCH=$(arch)
 #https://github.com/phpbrew/phpbrew/issues/861#issuecomment-294715448
 ln -s "/usr/include/${ARCH}-linux-gnu/curl" /usr/include/curl
 

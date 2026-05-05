@@ -46,6 +46,7 @@ jobs:
         distro:
           - focal
           - jammy
+          - resolute
         arch:
           - name: x86_64
             os: ubuntu-24.04
