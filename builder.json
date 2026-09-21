@@ -4,7 +4,8 @@
   "datasource": "docker",
   "versioning": "semver",
   "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+)$",
-  "startVersion": "7.4.0",
+  "startVersion": "8.2.22",
+  "allowedVersions": "~8.2.22 || >8.3.9",
   "ignoredVersions": [],
   "reverse": true
 }
