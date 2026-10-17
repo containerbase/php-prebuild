@@ -7,8 +7,8 @@ ARG DISTRO=resolute
 # base images
 #--------------------------------------
 FROM ghcr.io/containerbase/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214 AS build-focal
-FROM ghcr.io/containerbase/ubuntu:22.04@sha256:e778daf38e5d0d9f8419a4be137e2ffe1886ad19df034103c32dc0f677ed3714 AS build-jammy
-FROM ghcr.io/containerbase/ubuntu:26.04@sha256:2e27ff302056b2b96df4a524ce48e72c595abfe3fd7a3d923adf8e782e16896f AS build-resolute
+FROM ghcr.io/containerbase/ubuntu:22.04@sha256:0a9887931b0e38af2e3487ed39e29436b0535c4f3f52e57745baaf79d1898956 AS build-jammy
+FROM ghcr.io/containerbase/ubuntu:26.04@sha256:c098726dd9b9733f3e885f8de0ef375206a311b0a317eadc40d347b1115fb944 AS build-resolute
 
 
 #--------------------------------------
