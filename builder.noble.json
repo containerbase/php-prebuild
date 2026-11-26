@@ -1,0 +1,10 @@
+{
+  "image": "php",
+  "depName": "php",
+  "datasource": "docker",
+  "versioning": "semver",
+  "extractVersion": "^(?<version>\\d+\\.\\d+\\.\\d+)$",
+  "startVersion": "8.6.0",
+  "ignoredVersions": [],
+  "reverse": true
+}

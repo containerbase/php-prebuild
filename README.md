@@ -36,6 +36,8 @@ Optional environment variables
 
 | Name        | Description                                                              | Default    |
 | ----------- | ------------------------------------------------------------------------ | ---------- |
-| `DISTRO`    | Set an ubuntu base distro, `focal`, `jammy` and `resolute` are supported | `resolute` |
+| `DISTRO`    | Set an ubuntu base distro, `jammy`, `noble` and `resolute` are supported | `resolute` |
 | `APT_PROXY` | Set an APT http proxy for installing build deps                          | `<empty>`  |
 | `DEBUG`     | Show verbose php build output                                            | `<empty>`  |
+
+Ubuntu 24.04 (`noble`) only gets versions released since it was added.

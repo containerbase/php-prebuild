@@ -86,8 +86,8 @@ jobs:
       fail-fast: false
       matrix:
         distro:
-          - focal
           - jammy
+          - noble
           - resolute
         arch:
           - name: x86_64
@@ -110,6 +110,8 @@ jobs:
         with:
           command: binary-builder
           dry-run: ${{github.ref != 'refs/heads/main'}}
+          # noble only gets new releases
+          config: ${{ matrix.distro == 'noble' && 'builder.noble.json' || 'builder.json' }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
   success:
